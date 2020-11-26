@@ -9,6 +9,12 @@ const app = Vue.createApp({
         add(num) {
             this.counter = this.counter + num;
         },
+        outputFullName() {
+            if ( this.name === '' ) {
+                return '';
+            }
+            return this.name + ' Rondon';
+        },
         reduce(num) {
             this.counter = this.counter - num;
             // this.counter--;
