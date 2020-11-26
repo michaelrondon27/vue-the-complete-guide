@@ -1,4 +1,12 @@
 const app = Vue.createApp({
+    computed: {
+        fullName() {
+            if ( this.name === '' ) {
+                return '';
+            }
+            return this.name + ' Rondon'; 
+        }
+    },
     data() {
         return {
             counter: 0,
