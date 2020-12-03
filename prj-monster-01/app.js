@@ -8,9 +8,17 @@ const app = Vue.createApp({
             return this.currentRound % 3 !== 0;
         },
         monsterBarStyles() {
+            if ( this.monsterHealth < 0 ) {
+                return {width: '0%'};
+            }
+
             return {width: this.monsterHealth + '%'};
         },
         playerBarStyles() {
+            if ( this.playerHealth < 0 ) {
+                return {width: '0%'};
+            }
+
             return {width: this.playerHealth + '%'};
         }
     },
@@ -58,6 +66,18 @@ const app = Vue.createApp({
             this.monsterHealth -= attackValue;
 
             this.attackPlayer();
+        },
+        starGame() {
+            this.currentRound = 0;
+
+            this.monsterHealth = 100;
+
+            this.playerHealth = 100;
+
+            this.winner = null;
+        },
+        surrender() {
+            this.winner = 'monster';
         }
     },
     watch: {
