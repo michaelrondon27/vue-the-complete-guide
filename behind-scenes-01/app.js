@@ -22,7 +22,10 @@ const app2 = Vue.createApp({
         return {
             favoriteMeal: 'Pizza'
         }
-    }
+    },
+    template: `
+        <p>{{ favoriteMeal }}</p>
+    `
 });
 
 app2.mount('#app2');
