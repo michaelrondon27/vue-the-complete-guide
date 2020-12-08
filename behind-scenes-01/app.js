@@ -10,7 +10,8 @@ const app = Vue.createApp({
             this.currentUserInput = event.target.value;
         },
         setText() {
-            this.message = this.currentUserInput;
+            // this.message = this.currentUserInput;
+            this.message = this.$refs.userText.value;
         },
     },
 });
@@ -21,7 +22,7 @@ const app2 = Vue.createApp({
     data() {
         return {
             favoriteMeal: 'Pizza'
-        }
+        };
     },
     template: `
         <p>{{ favoriteMeal }}</p>
@@ -45,7 +46,7 @@ const handler = {
 
         target.message = value;
     }
-}
+};
 
 const proxy = new Proxy(data, handler);
 
