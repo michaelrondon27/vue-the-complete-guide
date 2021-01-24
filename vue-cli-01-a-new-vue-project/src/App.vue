@@ -8,35 +8,44 @@
             <friend-contact 
                 v-for="friend in friends"
                 :key="friend.id"
+                :email-address="friend.email"
+                :id="friend.id"
+                :is-favorite="friend.isFavorite"
                 :name="friend.name" 
                 :phone-number="friend.phone" 
-                :email-address="friend.email"
-                :is-favorite="true"
+                @toggle-favorite="toggleFavoriteStatus"
             ></friend-contact>
         </ul>
     </section>
 </template>
 
 <script>
-import FriendContact from './components/FriendContact.vue'
     export default {
-  components: { FriendContact },
         data() {
             return {
                 friends: [
                     {
+                        email: 'manuel@localhost.com',
                         id: 'manuel',
+                        isFavorite: true,
                         name: 'Manuel Lorenz',
-                        phone: '0123 45678 90',
-                        email: 'manuel@localhost.com'
+                        phone: '0123 45678 90'
                     },
                     {
+                        email: 'julie@localhost.com',
                         id: 'julie',
+                        isFavorite: false,
                         name: 'Julie Jones',
                         phone: '0987 654421 21',
-                        email: 'julie@localhost.com'
                     }
                 ]
+            }
+        },
+        methods: {
+            toggleFavoriteStatus( friendId ) {
+                const identifiedFriend = this.friends.find( friend => friend.id === friendId );
+
+                identifiedFriend.isFavorite = !identifiedFriend.isFavorite;
             }
         }
     }

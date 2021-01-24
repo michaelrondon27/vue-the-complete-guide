@@ -1,6 +1,6 @@
 <template>
     <li>
-        <h2>{{ name }} {{ friendIsFavorite ? '(Favorite)' : '' }}</h2>
+        <h2>{{ name }} {{ isFavorite ? '(Favorite)' : '' }}</h2>
 
         <button @click="toggleFavorite()">
             Toggle Favorite
@@ -21,8 +21,7 @@
     export default {
         data() {
             return {
-                detailsAreVisible: false,
-                friendIsFavorite: this.isFavorite
+                detailsAreVisible: false
             };
         },
         methods: {
@@ -30,7 +29,7 @@
                 this.detailsAreVisible = !this.detailsAreVisible;
             },
             toggleFavorite() {
-                this.friendIsFavorite = !this.friendIsFavorite;
+                this.$emit('toggle-favorite', this.id);
             }
         },
         // props: [
@@ -43,6 +42,10 @@
             emailAddress: {
                 required: true,
                 type: String
+            },
+            id: {
+                required: true,
+                type: String 
             },
             isFavorite: {
                 default: false,
