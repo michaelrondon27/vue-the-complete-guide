@@ -37,11 +37,33 @@
                 }
             }
         },
-        props: [
-            'emailAddress',
-            'isFavorite',
-            'name',
-            'phoneNumber'
-        ]
+        // props: [
+        //     'emailAddress',
+        //     'isFavorite',
+        //     'name',
+        //     'phoneNumber'
+        // ]
+        props: {
+            emailAddress: {
+                required: true,
+                type: String
+            },
+            isFavorite: {
+                default: '0',
+                required: false,
+                type: String,
+                validator: function( value ) {
+                    return value === '1' || value === '0';
+                }
+            },
+            name: {
+                required: true,
+                type: String
+            },
+            phoneNumber: {
+                required: true,
+                type: String
+            },
+        }
     }
 </script>
