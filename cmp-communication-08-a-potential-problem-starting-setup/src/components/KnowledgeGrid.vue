@@ -14,6 +14,6 @@
 <script>
   export default {
     emits: ['select-topic'],
-    props: ['topics'],
+    inject: ['topics']
   };
 </script>
