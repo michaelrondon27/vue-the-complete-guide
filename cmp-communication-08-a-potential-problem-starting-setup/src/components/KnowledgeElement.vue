@@ -5,7 +5,7 @@
     <p>{{ description }}</p>
     
     <button 
-      @click="$emit('select-topic', id)"
+      @click="selectTopic( id )"
     >
       Learn More
     </button>
@@ -15,6 +15,7 @@
 <script>
   export default {
     emits: ['select-topic'],
+    inject: ['selectTopic'],
     props: [
       'description',
       'id', 
