@@ -5,8 +5,17 @@
         </header>
 
         <ul>
-            <friend-contact></friend-contact>
-            <friend-contact></friend-contact>
+            <friend-contact 
+                name="Manuel Lorenz" 
+                phone-number="0123 45678 90" 
+                email-address="manuel@localhost.com"
+            ></friend-contact>
+
+            <friend-contact
+                name="Julie Jones" 
+                phone-number="0987 654421 21" 
+                email-address="julie@localhost.com"
+            ></friend-contact>
         </ul>
     </section>
 </template>
@@ -38,7 +47,7 @@ import FriendContact from './components/FriendContact.vue'
 
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Jost&display=swap');
-    
+
     * {
         box-sizing: border-box;
     }
