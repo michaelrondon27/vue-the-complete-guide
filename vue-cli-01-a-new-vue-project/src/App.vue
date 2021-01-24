@@ -14,7 +14,8 @@
                 :id="friend.id"
                 :is-favorite="friend.isFavorite"
                 :name="friend.name" 
-                :phone-number="friend.phone" 
+                :phone-number="friend.phone"
+                @delete="deleteContact"
                 @toggle-favorite="toggleFavoriteStatus"
             ></friend-contact>
         </ul>
@@ -54,6 +55,9 @@
                 };
 
                 this.friends.push( newFriendContact );
+            },
+            deleteContact( friendId ) {
+                this.friends = this.friends.filter( friend => friend.id !== friendId );
             },
             toggleFavoriteStatus( friendId ) {
                 const identifiedFriend = this.friends.find( friend => friend.id === friendId );
