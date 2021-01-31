@@ -6,13 +6,15 @@
 
         <button @click="setGoal">Set Goal</button>
 
-        <error-alert v-if="inputIsInvalid">
-            <h2>Input is invalid!</h2>
+        <teleport to="body">
+            <error-alert v-if="inputIsInvalid">
+                <h2>Input is invalid!</h2>
 
-            <p>Please enter at least a few characthers...</p>
+                <p>Please enter at least a few characthers...</p>
 
-            <button @click="confirmError">Okay</button>
-        </error-alert>
+                <button @click="confirmError">Okay</button>
+            </error-alert>
+        </teleport>
     </div>
 </template>
 
