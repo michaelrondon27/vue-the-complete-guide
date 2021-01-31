@@ -23,7 +23,7 @@
 <script>
   import ActiveGoals from './components/ActiveGoals';
   import ManageGoals from './components/ManageGoals';
-  import TheHeader from './components/TheHeader';
+  import TheHeader from './components/layout/TheHeader';
 
   export default {
     components: {
