@@ -1,10 +1,10 @@
 <template>
   <section>
-    <div>
+    <header>
       <h3>{{ fullName }}</h3>
       
       <base-badge :type="role" :caption="role.toUpperCase()"></base-badge>
-    </div>
+    </header>
     
     <p>{{ infoText }}</p>
   </section>
@@ -20,7 +20,7 @@
   };
 </script>
 
-<style>
+<style scoped>
   section {
     margin: 2rem auto;
     max-width: 30rem;
@@ -29,7 +29,7 @@
     padding: 1rem;
   }
 
-  section div {
+  section header {
     display: flex;
     justify-content: space-between;
     align-items: center;
