@@ -1,5 +1,7 @@
 <template>
-    <stored-resources :resources="storedResources"></stored-resources>  
+    <the-header title="RememberMe"></the-header>
+
+    <stored-resources :resources="storedResources"></stored-resources>
 </template>
 
 <script>
