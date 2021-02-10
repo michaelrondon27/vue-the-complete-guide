@@ -17,7 +17,7 @@
         components: {
             LearningResource
         },
-        props: [
+        inject: [
             'resources'
         ]
     }
