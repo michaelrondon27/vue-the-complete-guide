@@ -1,11 +1,22 @@
 <template>
     <ul>
-        
+        <learning-resource 
+            v-for="res in storedResources" 
+            :key="res.id"
+            :description="res.description"
+            :link="res.link"
+            :title="res.title"
+        ></learning-resource>
     </ul>    
 </template>
 
 <script>
+    import LearningResource from './components/learning-resources/LearningResource';
+
     export default {
+        components: {
+            LearningResource
+        },
         data() {
             return {
                 storedResources: [
