@@ -4,6 +4,7 @@
             v-for="res in resources" 
             :key="res.id"
             :description="res.description"
+            :id="res.id"
             :link="res.link"
             :title="res.title"
         ></learning-resource>

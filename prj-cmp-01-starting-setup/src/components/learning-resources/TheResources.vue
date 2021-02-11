@@ -65,14 +65,20 @@
 
                 this.selectedTab = 'stored-resources';
             },
+            removeResource( resId ) {
+                const resIndex = this.storedResources.findIndex( res => res.id === resId );
+
+                this.storedResources.splice(resIndex, 1);
+            },
             setSelectedTab( tab ) {
                 this.selectedTab = tab;
             }
         },
         provide() {
             return {
-                resources: this.storedResources,
-                addResource: this.addResource
+                addResource: this.addResource,
+                deleteResource: this.removeResource,
+                resources: this.storedResources
             };
         }
     }
