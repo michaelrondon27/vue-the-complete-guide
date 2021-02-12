@@ -7,7 +7,7 @@
 
     <div class="form-control">
       <label for="age">Your Age (Years)</label>
-      <input id="age" name="age" type="number" />
+      <input id="age" name="age" type="number" v-model="userAge"/>
     </div>
     
     <div class="form-control">
@@ -68,12 +68,18 @@
   export default {
     data() {
       return {
+        userAge: null,
         userName: ''
       };
     },
     methods: {
       submitForm() {
-        
+        console.log('Username: ' + this.userName);
+        this.userName = '';
+        console.log('User Age:');
+        console.log(this.userAge);
+        console.log(31);
+        this.userAge = null;
       }
     }
   }
